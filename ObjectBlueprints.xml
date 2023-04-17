@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+    <object Name="sleepy_Sliver" Inherits="Ctesiphus"/>
+    <object Name="Sliver" Load="Merge">
+        <part Name="sleepy_SliverSpawner"/>
+        <part Name="Render" DisplayName="Sliver" ColorString="&amp;w" RenderLayer="10" RenderIfDark="false" RenderString="G" DetailColor="c"></part>
+        <!--
+            Tile="Creatures/Kobold_Pants.png" 
+        --> 
+        <part Name="Brain" Hostile="true" Factions="Slivers"></part>
+        <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Sliver Corpse" BodyDrop="true" InventoryDrop="true"></part>
+        <part Name="Swarmer"></part>
+        <stat Name="Strength" sValue="8,1d3,(t)d1" />
+        <stat Name="Agility" sValue="12,1d3,(t)d1" />
+        <stat Name="Toughness" sValue="12,1d3,(t)d1" />
+        <stat Name="Intelligence" sValue="12,1d3,(t)d1" />
+        <stat Name="Willpower" sValue="12,1d3,(t)d1" />
+        <stat Name="Ego" sValue="12,1d3,(t)d1" />
+        <intproperty Name="Bleeds" Value="1" />
+        <property Name="LairTable" Value="Caves 1" />
+    </object>
+    
+</objects>  
