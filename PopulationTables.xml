@@ -1,0 +1,5 @@
+  <population Name="GenericLairOwner" Load="Merge">
+    <group Name="Options" Load="Merge">  <!-- Add the Load="Merge" attribute to each nested group, mimicking the base game's PopulationTables.xml structure -->
+      <object Blueprint="sleepy_Sliver" Weight="20" /> <!-- Insert your new item! -->
+    </group>
+  </population>
