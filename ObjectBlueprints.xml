@@ -14,15 +14,18 @@
         <stat Name="Intelligence" sValue="10,1d3,(t)d1" />
         <stat Name="Willpower" sValue="8,1d3,(t)d1" />
         <stat Name="Ego" sValue="6,1d3,(t)d1" />
+
         <inventoryobject Blueprint="Fragment_Beak" Number="1" />
         <part Name="Description" Short="A thick cord of bristly segments are capped by a cuspate beak for breaking through shale." />
         <skill Name="Tactics" />
         <skill Name="Axe" />
         <skill Name="Axe_Cleave" />
+
         <inventoryobject Blueprint="Fragment_Claw" Number="1" />
         <part Name="Description" Short="A small, pointy claw extending out of an appendage at the middle of the abdomen." />
         <skill Name="Tactics" />
         <skill Name="Dagger" />
+
         <intproperty Name="Bleeds" Value="1" />
         <property Name="LairTable" Value="Caves 1" />
         <tag Name="Worm" />
@@ -30,22 +33,22 @@
         <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
         <tag Name="DynamicObjectsTable:Hills_Creatures" />
     </object>
+
     <object Name="Fragment_Beak" Inherits="NaturalWeapon">
-        <part Name="Render" DisplayName="{{Y|crab-crushing beak}}" />
+        <part Name="Render" DisplayName="{{Y|beak}}" />
         <part Name="MeleeWeapon" BaseDamage="1d6" Skill="Axe" Stat="Strength" Slot="Head" />
     </object>
+
     <object Name="Fragment_Claw" Inherits="NaturalWeapon">
-        <part Name="Render" DisplayName="{{Y|crab-crushing claw}}" />
+        <part Name="Render" DisplayName="{{Y|claw}}" />
         <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Dagger" Stat="Agility" Slot="Body" />
     </object>
-      <object Name="Fragment Corpse" Inherits="Worm Corpse">
+
+    <object Name="Fragment Corpse" Inherits="Worm Corpse">
         <part Name="Description" Short="Rings of still, spongy wormbody are mixed with crushed beak, and little bristles scrape the earth." />
-            <part Name="Butcherable" OnSuccess="@Fragment Corpse"/>
+        <part Name="Butcherable" OnSuccess="@Fragment Corpse"/>
         <part Name="Render" DisplayName="fragment corpse" ColorString="&amp;y" />
         <part Name="Physics" Weight="20" />
         <tag Name="Tier" Value="1" />    
-      </object>	    
+    </object>	    
 </objects>  
-<!-- 
-
--->
