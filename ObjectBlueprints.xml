@@ -1,23 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <objects>
+    <!--
     <object Name="sleepy_Sliver" Inherits="Ctesiphus"/>
-    <object Name="Sliver" Load="Merge">
-        <part Name="sleepy_SliverSpawner"/>
-        <part Name="Render" DisplayName="Sliver" ColorString="&amp;w" RenderLayer="10" RenderIfDark="false" RenderString="G" DetailColor="c"></part>
-        <!--
-            Tile="Creatures/Kobold_Pants.png" 
-        --> 
-        <part Name="Brain" Hostile="true" Factions="Slivers"></part>
-        <part Name="Corpse" CorpseChance="90" CorpseBlueprint="Sliver Corpse" BodyDrop="true" InventoryDrop="true"></part>
+    --> 
+    <object Name="sleepy_Sliver" Load="Load" Inherits="BaseWorm">
+        <part Name="Render" DisplayName="Fragment" ColorString="&amp;w" RenderLayer="10" RenderIfDark="false" RenderString="G" DetailColor="c" Tile="Creatures/sw_sliver.png" ></part>
+        <part Name="Brain" Hostile="true" Factions="Fragments"></part>
+        <part Name="Corpse" CorpseChance="30" CorpseBlueprint="Fragment Corpse"></part>
         <part Name="Swarmer"></part>
-        <stat Name="Strength" sValue="8,1d3,(t)d1" />
+        <stat Name="Strength" sValue="10,1d3,(t)d1" />
         <stat Name="Agility" sValue="12,1d3,(t)d1" />
         <stat Name="Toughness" sValue="12,1d3,(t)d1" />
-        <stat Name="Intelligence" sValue="12,1d3,(t)d1" />
-        <stat Name="Willpower" sValue="12,1d3,(t)d1" />
-        <stat Name="Ego" sValue="12,1d3,(t)d1" />
+        <stat Name="Intelligence" sValue="10,1d3,(t)d1" />
+        <stat Name="Willpower" sValue="8,1d3,(t)d1" />
+        <stat Name="Ego" sValue="6,1d3,(t)d1" />
+        <inventoryobject Blueprint="Fragment_Beak" Number="1" />
+        <part Name="Description" Short="A thick cord of bristly segments are capped by a cuspate beak for breaking through shale." />
+        <skill Name="Tactics" />
+        <skill Name="Axe" />
+        <skill Name="Axe_Cleave" />
+        <inventoryobject Blueprint="Fragment_Claw" Number="1" />
+        <part Name="Description" Short="A small, pointy claw extending out of an appendage at the middle of the abdomen." />
+        <skill Name="Tactics" />
+        <skill Name="Dagger" />
         <intproperty Name="Bleeds" Value="1" />
         <property Name="LairTable" Value="Caves 1" />
+        <tag Name="Worm" />
+        <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
+        <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
+        <tag Name="DynamicObjectsTable:Hills_Creatures" />
     </object>
-    
+    <object Name="Fragment_Beak" Inherits="NaturalWeapon">
+        <part Name="Render" DisplayName="{{Y|crab-crushing beak}}" />
+        <part Name="MeleeWeapon" BaseDamage="1d6" Skill="Axe" Stat="Strength" Slot="Head" />
+    </object>
+    <object Name="Fragment_Claw" Inherits="NaturalWeapon">
+        <part Name="Render" DisplayName="{{Y|crab-crushing claw}}" />
+        <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Dagger" Stat="Agility" Slot="Body" />
+    </object>
+      <object Name="Fragment Corpse" Inherits="Worm Corpse">
+        <part Name="Description" Short="Rings of still, spongy wormbody are mixed with crushed beak, and little bristles scrape the earth." />
+            <part Name="Butcherable" OnSuccess="@Fragment Corpse"/>
+        <part Name="Render" DisplayName="fragment corpse" ColorString="&amp;y" />
+        <part Name="Physics" Weight="20" />
+        <tag Name="Tier" Value="1" />    
+      </object>	    
 </objects>  
+<!-- 
+
+-->
