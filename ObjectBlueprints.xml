@@ -21,8 +21,8 @@
         <skill Name="Axe" />
         <skill Name="Axe_Cleave" />
 
-        <inventoryobject Blueprint="Fragment_Claw" Number="1" />
-        <part Name="Description" Short="A small, pointy claw extending out of an appendage at the middle of the abdomen." />
+        <inventoryobject Blueprint="Fragment_Talon" Number="1" />
+        <part Name="Description" Short="A small, pointy talon extending out of an appendage at the middle of the abdomen." />
         <skill Name="Tactics" />
         <skill Name="Dagger" />
 
@@ -32,6 +32,8 @@
         <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
         <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
         <tag Name="DynamicObjectsTable:Hills_Creatures" />
+
+        <part Name="RandomMutations" Mental="0-1" MentalLevel="0-1" Physical="0-1" PhysicalLevel="1-2" />
     </object>
 
     <object Name="Fragment_Beak" Inherits="NaturalWeapon">
@@ -39,9 +41,9 @@
         <part Name="MeleeWeapon" BaseDamage="1d6" Skill="Axe" Stat="Strength" Slot="Head" />
     </object>
 
-    <object Name="Fragment_Claw" Inherits="NaturalWeapon">
-        <part Name="Render" DisplayName="{{Y|claw}}" />
-        <part Name="MeleeWeapon" BaseDamage="1d4" Skill="Dagger" Stat="Agility" Slot="Body" />
+    <object Name="Fragment_Talon" Inherits="NaturalWeapon">
+        <part Name="Render" DisplayName="{{Y|talon}}" />
+        <part Name="MeleeWeapon" BaseDamage="1d4" Skill="ShortBlades" Stat="Agility" Slot="Body" />
     </object>
 
     <object Name="Fragment Corpse" Inherits="Worm Corpse">
