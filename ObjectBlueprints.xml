@@ -26,6 +26,9 @@
         <skill Name="Tactics" />
         <skill Name="Dagger" />
 
+        <part Name="Swarmer" />
+        <property Name="Role" Value="Minion" ExtraBonus="1"/>
+
         <intproperty Name="Bleeds" Value="1" />
         <property Name="LairTable" Value="Caves 1" />
         <tag Name="Worm" />
