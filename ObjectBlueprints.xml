@@ -3,11 +3,11 @@
     <!--
     <object Name="sleepy_Sliver" Inherits="Ctesiphus"/>
     --> 
-    <object Name="sleepy_Sliver" Load="Load" Inherits="BaseWorm">
+    <object Name="sleepy_baseSliver" Load="Load" Inherits="BaseWorm">
         <part Name="Render" DisplayName="Fragment" ColorString="&amp;w" RenderLayer="10" RenderIfDark="false" RenderString="G" DetailColor="c" Tile="Creatures/sw_sliver.png" ></part>
         <part Name="Brain" Hostile="true" Factions="Fragments"></part>
+        <part Name="Description" Short="A sort of floating annelid, with an appendage splitting off at the abdomen. It appears to be looking for others like itself." />
         <part Name="Corpse" CorpseChance="30" CorpseBlueprint="Fragment Corpse"></part>
-        <part Name="Swarmer"></part>
         <stat Name="Strength" sValue="10,1d3,(t)d1" />
         <stat Name="Agility" sValue="12,1d3,(t)d1" />
         <stat Name="Toughness" sValue="12,1d3,(t)d1" />
@@ -16,13 +16,11 @@
         <stat Name="Ego" sValue="6,1d3,(t)d1" />
 
         <inventoryobject Blueprint="Fragment_Beak" Number="1" />
-        <part Name="Description" Short="A thick cord of bristly segments are capped by a cuspate beak for breaking through shale." />
         <skill Name="Tactics" />
         <skill Name="Axe" />
         <skill Name="Axe_Cleave" />
 
         <inventoryobject Blueprint="Fragment_Talon" Number="1" />
-        <part Name="Description" Short="A small, pointy talon extending out of an appendage at the middle of the abdomen." />
         <skill Name="Tactics" />
         <skill Name="Dagger" />
 
@@ -35,8 +33,13 @@
         <tag Name="DynamicObjectsTable:DesertCanyon_Creatures" />
         <tag Name="DynamicObjectsTable:Saltmarsh_Creatures" />
         <tag Name="DynamicObjectsTable:Hills_Creatures" />
+    </object>
 
-        <part Name="RandomMutations" Mental="0-1" MentalLevel="0-1" Physical="0-1" PhysicalLevel="1-2" />
+    <object Name="sleepy_phySliver" Load="Load" Inherits="sleepy_baseSliver">
+        <part Name="RandomMutations" Physical="1-2" PhysicalLevel="1-2" />
+    </object>
+    <object Name="sleepy_menSliver" Load="Load" Inherits="sleepy_baseSliver">
+       <part Name="RandomMutations" Mental="1-2" MentalLevel="1-2" />
     </object>
 
     <object Name="Fragment_Beak" Inherits="NaturalWeapon">
